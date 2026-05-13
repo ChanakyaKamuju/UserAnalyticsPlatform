@@ -28,6 +28,16 @@ A full-stack user analytics platform designed to track, aggregate, and visualize
 
 ---
 
+## 🚀 Future Scalability Improvements
+
+To transition this MVP into an enterprise-grade tracking system capable of handling Black Friday-level e-commerce traffic, I would implement the following architectural upgrades:
+
+1. **Client-Side Event Batching:** The current tracker sends an HTTP request immediately upon interaction. I would modify this to buffer events in a local array and flush them to the server every 5-10 seconds (or via the `visibilitychange` API upon page exit) to drastically reduce network overhead.
+2. **In-Memory Message Queue:** Directly writing high-frequency events to MongoDB can cause write-locking. I would integrate **Redis** and **BullMQ** on the backend. The API would instantly accept the batched payload (`202 Accepted`) and push it to Redis, allowing background worker threads to perform bulk inserts (`insertMany`) into the database.
+3. **Device-Specific Heatmap Filtering:** Because website layouts change drastically between mobile and desktop, plotting all clicks on a single canvas skews the visual data. I would introduce a device toggle to filter heatmap data based on viewport breakpoints.
+
+---
+
 ## 🏗️ Architecture, Assumptions & Trade-offs
 
 Building a production-ready analytics engine requires balancing data fidelity with system performance. Here are the core decisions made for this MVP:
@@ -47,16 +57,6 @@ Building a production-ready analytics engine requires balancing data fidelity wi
 
 - **Decision:** Hardcoding API URLs and CORS origins limits scalability. The frontend utilizes `import.meta.env.VITE_API_BASE` to dynamically switch between local and Vercel environments. Similarly, the backend CORS policy is driven by an `ALLOWED_ORIGINS` environment variable.
 - **Trade-off:** Requires slightly more setup for local development (creating `.env` files), but ensures that zero sensitive configuration data is leaked into the public repository and adding new client domains requires no code changes.
-
----
-
-## 🚀 Future Scalability Improvements
-
-To transition this MVP into an enterprise-grade tracking system capable of handling Black Friday-level e-commerce traffic, I would implement the following architectural upgrades:
-
-1. **Client-Side Event Batching:** The current tracker sends an HTTP request immediately upon interaction. I would modify this to buffer events in a local array and flush them to the server every 5-10 seconds (or via the `visibilitychange` API upon page exit) to drastically reduce network overhead.
-2. **In-Memory Message Queue:** Directly writing high-frequency events to MongoDB can cause write-locking. I would integrate **Redis** and **BullMQ** on the backend. The API would instantly accept the batched payload (`202 Accepted`) and push it to Redis, allowing background worker threads to perform bulk inserts (`insertMany`) into the database.
-3. **Device-Specific Heatmap Filtering:** Because website layouts change drastically between mobile and desktop, plotting all clicks on a single canvas skews the visual data. I would introduce a device toggle to filter heatmap data based on viewport breakpoints.
 
 ---
 
