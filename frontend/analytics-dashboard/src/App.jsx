@@ -15,20 +15,20 @@ function App() {
           <div className="inline-flex items-center rounded-full bg-white shadow-md p-1">
             <button
               onClick={() => setView("sessions")}
-              className={`px-6 py-2 rounded-full transition-colors duration-150 font-medium ${view === "sessions" ? "bg-cyan-700 text-white" : "text-gray-600 hover:bg-slate-50"}`}
+              className={`px-6 py-2 rounded-full transition-colors duration-150 font-medium  ${view === "sessions" ? "bg-cyan-700 text-white" : "text-cyan-700 hover:bg-gray-300 hover:cursor-pointer"}`}
             >
               Sessions
             </button>
             <button
               onClick={() => setView("heatmap")}
-              className={`px-6 py-2 rounded-full transition-colors duration-150 font-medium ${view === "heatmap" ? "bg-cyan-700 text-white" : "text-gray-600 hover:bg-slate-50"}`}
+              className={`px-6 py-2 rounded-full transition-colors duration-150 font-medium ${view === "heatmap" ? "bg-cyan-700 text-white" : "text-cyan-700 hover:bg-gray-300 hover:cursor-pointer"}`}
             >
               Heatmap Analysis
             </button>
           </div>
         </div>
 
-        <div className="p-8 flex-1  overflow-hidden">
+        <div className="pl-8 pr-8 pb-8 flex-1 overflow-hidden">
           {view === "sessions" ? (
             <div className="flex w-full h-full rounded-3xl overflow-hidden shadow-lg">
               <Sidebar onSelectSession={setSelectedSession} />
