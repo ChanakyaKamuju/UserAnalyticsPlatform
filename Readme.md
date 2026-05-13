@@ -4,8 +4,8 @@ A full-stack user analytics platform designed to track, aggregate, and visualize
 
 **Live Application Links:**
 
-- 🖥️ **Frontend Dashboard:** [Insert your Vercel Link here]
-- ⚙️ **Backend API:** [Insert your Render Link here]
+- 🖥️ **Frontend Dashboard:** [UserAnalyticsPlatform](https://user-analytics-platform.vercel.app/)
+- ⚙️ **Backend API:** [BackendAPI](https://useranalyticsplatform.onrender.com)
 - 📦 **Demo Page:** To test tracking, visit the dashboard, open the console/network tab, and click anywhere to generate live events!
 
 ---
