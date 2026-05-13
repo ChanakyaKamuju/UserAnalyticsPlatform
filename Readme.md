@@ -1,4 +1,4 @@
-# 📊 CausalFunnel Analytics Platform
+#CausalFunnel Analytics Platform
 
 A full-stack user analytics platform designed to track, aggregate, and visualize user behavior across web applications. Built as a technical evaluation for the Full Stack Engineer role at CausalFunnel.
 
