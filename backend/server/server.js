@@ -5,13 +5,26 @@ const eventRoutes = require("./routes/eventRoutes");
 require("dotenv").config();
 
 const app = express();
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",")
+  : [];
+
 app.use(
   cors({
-    origin: [
-      "http://127.0.0.1:5500",
-      "http://localhost:5173",
-      "https://user-analytics-platform.vercel.app",
-    ],
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(
+          new Error(
+            "The CORS policy for this site does not allow access from the specified Origin.",
+          ),
+        );
+      }
+    },
     credentials: true,
   }),
 );

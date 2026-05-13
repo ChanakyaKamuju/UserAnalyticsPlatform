@@ -1,6 +1,6 @@
 (function () {
   const CONFIG = {
-    endpoint: "http://localhost:5000/api/events",
+    endpoint: "https://useranalyticsplatform.onrender.com/api/events",
     sessionKey: "cf_session_id",
   };
   const getSessionId = () => {

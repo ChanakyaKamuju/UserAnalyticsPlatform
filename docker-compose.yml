@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  # The Background Queue Memory
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  # Your Node.js API
+  backend:
+    build: ./server
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      # NOTE: Provide your MongoDB Atlas URI here directly or via an .env file
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - redis
+
+  # Your React Dashboard
+  frontend:
+    build: ./frontend/analytics-dashboard
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
