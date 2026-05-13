@@ -7,7 +7,11 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-    origin: ["http://127.0.0.1:5500", "http://localhost:5173"],
+    origin: [
+      "http://127.0.0.1:5500",
+      "http://localhost:5173",
+      "https://useranalyticsplatform.onrender.com",
+    ],
     credentials: true,
   }),
 );
