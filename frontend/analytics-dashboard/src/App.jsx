@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import UserJourney from "./components/UserJourney";
-import HeatmapView from "./components/HeatmapView.js";
+import HeatmapView from "./components/HeatmapView";
 
 function App() {
   const [selectedSession, setSelectedSession] = useState(null);
@@ -79,7 +79,7 @@ function App() {
         <div className="pl-8 pr-8 pb-8 flex-1 overflow-hidden">
           {view === "sessions" ? (
             <div className="flex flex-col md:flex-row w-full h-full rounded-3xl overflow-hidden shadow-lg">
-              <div className="w-full md:w-auto h-1/2 md:h-full">
+              <div className="w-full md:w-1/3 md:max-w-sm h-1/2 md:h-full">
                 <Sidebar onSelectSession={setSelectedSession} />
               </div>
 
