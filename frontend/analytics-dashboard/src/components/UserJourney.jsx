@@ -30,7 +30,7 @@ const UserJourney = ({ sessionId }) => {
     return (
       <div className="h-full flex flex-col items-center justify-center bg-white text-slate-400 space-y-4">
         <Globe size={48} className="opacity-20" />
-        <p className="text-lg font-medium">
+        <p className="text-lg font-medium px-4">
           Select a session from the sidebar to view the journey.
         </p>
       </div>
