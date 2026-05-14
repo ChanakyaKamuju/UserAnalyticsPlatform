@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MousePointer2, Globe, ArrowDown } from "lucide-react";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api";
+const API_BASE =
+  import.meta.env.VITE_API_BASE ||
+  "https://useranalyticsplatform.onrender.com/api";
 
 const UserJourney = ({ sessionId }) => {
   const [journey, setJourney] = useState([]);
@@ -61,18 +63,20 @@ const UserJourney = ({ sessionId }) => {
 
   return (
     <div className="">
-      <div className="flex flex-row items-center justify-between mb-8 h-12 md:h-24 sticky w-full top-0 bg-cyan-700 z-10 p-4">
+      <div className="flex flex-row items-center justify-between mb-8 h-18 md:h-24 sticky w-full top-0 bg-cyan-700 z-10 p-4">
         <div>
-          <h2 className="text-2xl font-bold text-white">Event Timeline</h2>
-          <p className="text-sm text-neutral-300 font-mono mt-1">
+          <h2 className="text-lg  md:text-2xl font-bold text-white">
+            Event Timeline
+          </h2>
+          <p className="text-xs md:text-sm text-neutral-300 font-mono mt-1">
             Session: {sessionId}
           </p>
         </div>
-        <div className="bg-blue-50 border border-blue-100 rounded-lg px-2 py-1 text-right">
-          <p className="text-xs text-cyan-600 font-semibold uppercase tracking-wider mb-0.5">
+        <div className="bg-blue-50 border  border-blue-100 rounded-lg px-1 md:px-2 py-0.5 md:py-1 text-right">
+          <p className="text-[10px] md:text-xs text-cyan-600 font-semibold uppercase tracking-wider mb-0.5">
             Total Duration
           </p>
-          <p className="text-lg font-bold text-cyan-700">
+          <p className="text-sm md:text-lg font-bold text-cyan-700">
             {formatDuration(durationSeconds)}
           </p>
         </div>
