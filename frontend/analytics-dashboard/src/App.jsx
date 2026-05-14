@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import UserJourney from "./components/UserJourney";
-import HeatmapView from "./components/HeatmapView";
+import HeatmapView from "./components/HeatmapView_usingHeatMap.js";
 
 function App() {
   const [selectedSession, setSelectedSession] = useState(null);
