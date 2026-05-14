@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MousePointer2, Globe, ArrowDown } from "lucide-react";
 
+// const API_BASE =
+//   import.meta.env.VITE_API_BASE ||
+//   "https://useranalyticsplatform.onrender.com/api";
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api";
 
 const UserJourney = ({ sessionId }) => {
@@ -80,7 +83,7 @@ const UserJourney = ({ sessionId }) => {
         </div>
       </div>
 
-      <div className="max-w-2xl  mx-auto space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+      <div className="max-w-2xl  mx-auto px-1 space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
         {journey.map((event, idx) => (
           <div
             key={idx}
