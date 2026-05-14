@@ -36,7 +36,7 @@ const Sidebar = ({ onSelectSession }) => {
   };
 
   return (
-    <div className="w-1/3 max-w-sm bg-white flex flex-col shadow-sm z-10 h-full shrink-0 overflow-auto border-r border-neutral-200">
+    <div className=" bg-white flex flex-col shadow-sm z-10 h-full shrink-0 overflow-auto border-b md:border-r border-neutral-200">
       {/* Header */}
       <div className="p-5 h-24 shadow-sm bg-cyan-700 flex justify-between items-center sticky top-0">
         <div>
