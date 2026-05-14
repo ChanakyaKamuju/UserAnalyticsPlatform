@@ -38,7 +38,7 @@ const Sidebar = ({ onSelectSession }) => {
   return (
     <div className=" bg-white flex flex-col shadow-sm z-10 h-full shrink-0 overflow-auto border-b md:border-r border-neutral-200">
       {/* Header */}
-      <div className="p-5 h-24 shadow-sm bg-cyan-700 flex justify-between items-center sticky top-0">
+      <div className="p-5 h-12 md:h-24 shadow-sm bg-cyan-700 flex justify-between items-center sticky top-0">
         <div>
           <h2 className="text-lg font-bold text-white">Active Sessions</h2>
           <p className="text-xs text-white">Live tracker data </p>

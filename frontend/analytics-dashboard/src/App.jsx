@@ -88,17 +88,6 @@ function App() {
               </div>
             </div>
           ) : (
-            // <div className="flex flex-col md:flex-row w-full h-full rounded-3xl overflow-hidden shadow-lg">
-            //   {/* Sidebar */}
-            //   <div className="w-full md:w-auto border-b md:border-b-0 md:border-r">
-            //     <Sidebar onSelectSession={setSelectedSession} />
-            //   </div>
-
-            //   {/* Main Content */}
-            //   <div className="flex-1 h-full bg-white overflow-auto">
-            //     <UserJourney sessionId={selectedSession} />
-            //   </div>
-            // </div>
             <div className="w-full h-full overflow-auto flex items-center justify-center">
               <HeatmapView />
             </div>

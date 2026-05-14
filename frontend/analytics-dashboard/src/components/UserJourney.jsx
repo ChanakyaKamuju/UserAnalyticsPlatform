@@ -61,7 +61,7 @@ const UserJourney = ({ sessionId }) => {
 
   return (
     <div className="">
-      <div className="flex flex-row items-center justify-between mb-8 h-24 sticky w-full top-0 bg-cyan-700 z-10 p-4">
+      <div className="flex flex-row items-center justify-between mb-8 h-12 md:h-24 sticky w-full top-0 bg-cyan-700 z-10 p-4">
         <div>
           <h2 className="text-2xl font-bold text-white">Event Timeline</h2>
           <p className="text-sm text-neutral-300 font-mono mt-1">
