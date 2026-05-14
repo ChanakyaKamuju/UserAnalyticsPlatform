@@ -14,7 +14,7 @@ const HeatmapView = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-8/12 p-6 bg-white rounded-xl shadow-lg">
+    <div className="mx-auto w-full sm:max-w-11/12 2xl:max-w-8/12  p-6 bg-white rounded-xl shadow-lg">
       <div className="mb-6 flex flex-col md:flex-row gap-2">
         <input
           type="text"
