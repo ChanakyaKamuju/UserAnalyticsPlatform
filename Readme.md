@@ -58,6 +58,15 @@ Building a production-ready analytics engine requires balancing data fidelity wi
 - **Decision:** Hardcoding API URLs and CORS origins limits scalability. The frontend utilizes `import.meta.env.VITE_API_BASE` to dynamically switch between local and Vercel environments. Similarly, the backend CORS policy is driven by an `ALLOWED_ORIGINS` environment variable.
 - **Trade-off:** Requires slightly more setup for local development (creating `.env` files), but ensures that zero sensitive configuration data is leaked into the public repository and adding new client domains requires no code changes.
 
+### 4. Session Persistence:
+
+- I utilized localStorage for permanent session IDs to simplify logic for this MVP.
+- For a production environment, I would implement cookies with a 30-minute inactivity timeout.
+
+### 5. Security & Bot Mitigation:
+
+- To protect the backend from automated script spam, I documented the need for server-side rate limiting and client-side throttling as essential future improvements for high-traffic scenarios.
+
 ---
 
 ## 💻 Local Setup & Development
